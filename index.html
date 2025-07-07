@@ -201,12 +201,12 @@ const sentenceStructures = {
     verbs: ["perform", "carry out", "operate"]
   },
 "Skill-Analyze": {
-    template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
+    template: ["Graduates will be able to", "[verb]", "problems involving", "[disciplinary or interdisciplinary]", "using", "[analytical methods from discipline, and if relevant, in interdisciplinary contexts.]"],
     verbs: ["analyze", "evaluate", "synthesize"]
   },
 "Skill-Select/Evaluate": {
-    template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
-    verbs: ["understand", "demonstrate", "develop", "articulate"]
+    template: ["Graduates will be able to", "[verb]", "appropriate tools and methods in", "[discipline]", "to determine effective approaches for solving problems in", "[disciplinary or interdisciplinary contexts.]"],
+    verbs: ["select", "evaluate", "assess"]
   },
 "Application of Knowledge": {
     template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
@@ -270,8 +270,8 @@ const sentenceStructures = {
 "Knowledge/Understanding-Linking Ideas": "Graduates will be able to connect mathematical concepts across different branches of mathematics.",  
 "Knowledge/Understanding-Procedure": "Graduates will be able to apply standard mathematical procedures used in calculus, algebra, and computational mathematics.",
   "Skill-Task Completion": "Graduates will be able to perform technical tasks in mathematics such as solving equations, constructing mathematical models, and analyzing datasets using mathematical software.",
-  "Skill-Analyze": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
-  "Skill-Select/Evaluate": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
+  "Skill-Analyze": "Graduates will be able to analyze mathematical problems involving real-world systems using calculus and linear algebra.",
+  "Skill-Select/Evaluate": "Graduates will be able to evaluate tools and methods in mathematics to determine effective approaches for solving problems in science and engineering.",
   "Application of Knowledge": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
   "Application of Skill": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
   "Gen-Communication-Write/Oral/Read/Listen": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
@@ -506,13 +506,16 @@ function cleanPlaceholder(part) {
   const p = part.slice(1, -1).trim();
   const map = {
     "particular key concepts/theories": "particular key concepts/theories",
-    "in mathematical topic in disciplinary or interdisciplinary contexts.": "in mathematical topic in disciplinary or interdisciplinary contexts.",
+      "in disciplinary or interdisciplinary contexts.": "in disciplinary or interdisciplinary contexts.",
+    "two or more specific key ideas in the subject and, if relevant, interdisciplinary contexts.": "two or more specific key ideas in the subject and, if relevant, interdisciplinary contexts.",
+      "in mathematical topic in disciplinary or interdisciplinary contexts.": "in mathematical topic in disciplinary or interdisciplinary contexts.",
    "a particular concept": "a particular concept",
        "procedural techniques for solving problems related to the subject and, if possible, interdisciplinary contexts.": "procedural techniques for solving problems related to the subject and, if possible, interdisciplinary contexts.",
-       "two or more specific key ideas in the subject and, if relevant, interdisciplinary contexts.": "two or more specific key ideas in the subject and, if relevant, interdisciplinary contexts.",
-       "topic and, if relevant in interdisciplinary contextual problems.": "topic and, if relevant in interdisciplinary contextual problems.",
+        "topic and, if relevant in interdisciplinary contextual problems.": "topic and, if relevant in interdisciplinary contextual problems.",
        "discipline-specific problems, if relevant, in interdisciplinary contexts.": "discipline-specific problems, if relevant, in interdisciplinary contexts.",
-       "examples.": "examples."
+       "two or more specific concepts": "two or more specific concepts",
+       "different domains or aspects of the subject or interdisciplinary sources": "different domains or aspects of the subject or interdisciplinary sources",
+       "specific topic(s) in the subject": "specific topic(s) in the subject"
   };
   return map[p] || p;
 }
@@ -540,14 +543,14 @@ const cloTemplates = {
     example: "Students will be able to calculate derivatives of trigonometric functions."
   },
   "Skill-Analyze": {
-    template: ["Students will be able to", "[verb]", "[discipline-specific problems, if relevant, in interdisciplinary contexts.]"],
+    template: ["Students will be able to", "[verb]", "relationships between", "[two or more specific concepts]", "from", "[different domains or aspects of the subject or interdisciplinary sources.]"],
     verbs: ["break down", "differentiate", "interpret", "infer"],
-    example: "Students will be able to interpret the behavior of functions using first and second derivatives."
+    example: "Students will be able to interpret relationships between the concepts of limits and instantaneous rate of change from graphical, numerical, and real-world motion contexts."
   },
   "Skill-Select/Evaluate": {
-    verbs: ["identify", "describe", "analyze", "explain", "illustrate"],
-    template: ["Students will be able to", "[verb]", "contributions of", "[individuals/cultures]", "in", "[subject/topic]"],
-    example: "Students will be able to illustrate contributions of Indian and Arab mathematicians to early concepts of integration."
+    verbs: ["choose", "justify", "critique", "test", "recommend"],
+    template: ["Students will be able to", "[verb]", "appropriate techniques or strategies for solving problems related to", "[specific topic(s) in the subject.]"],
+    example: "Students will be able to choose appropriate techniques or strategies for solving problems related to implicit differentiation."
   },
   "Application of Knowledge": {
     verbs: ["use", "calculate", "build", "simulate", "follow"],
