@@ -183,22 +183,21 @@ const sentenceStructures = {
     template: ["Graduates will be able to", "[verb]", "[core facts/concepts/principles/theories/processes]", "of", "[chosen fields of discipline, if applicable, in its interdisciplinary contexts]"],
     verbs: ["demonstrate","understand", "grasp"]
   },
+    "Knowledge/Understanding-Linking Ideas": {
+    template: ["Graduates will be able to", "[verb]", "[concepts/theories/principles within discipline and, if relevant, across interdisciplinary domains.]"],
+    verbs: ["connect", "relate", "integrate"]
+  },
  "Knowledge/Understanding-Procedure": {
     template: ["Graduates will be able to", "[verb]", "standard", "[procedures/methods/techniques]", "used in", "[discipline and related interdisciplinary contexts.]"],
     verbs: ["apply", "perform", "demonstrate"]
-  },
-    "Knowledge/Understanding-Linking Ideas": {
-    template: ["Graduates will be able to", "[verb]", "[concepts/theories/principles]", "in", "[disciplinary and, if relevant interdisciplinary contexts]"],
-    verbs: ["understand", "connect", "relate", "integrate"]
-  },
-  
+  }, 
 "Skill-Task Completion": {
     template: ["Graduates will be able to", "[verb]", "[technical and cognitive tasks relevant to discipline and, if applicable, interdisciplinary contexts]", "such as", "[examples here.]"],
     verbs: ["perform", "carry out", "operate"]
   },
   
 "Skill-Task Completion": {
-    template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
+    template: ["Graduates will be able to", "[verb]", "[technical and cognitive tasks relevant to discipline and, if applicable, interdisciplinary contexts.]"],
     verbs: ["perform", "carry out", "operate"]
   },
 "Skill-Analyze": {
@@ -268,8 +267,8 @@ const sentenceStructures = {
 };
   const calculusExamples = {
   "Knowledge/Understanding-Concept": "Graduates will be able to understand foundational mathematical concepts and principles of pure and applied mathematics.",
-  "Knowledge/Understanding-Procedure": "Graduates will be able to apply standard mathematical procedures used in calculus, algebra, and computational mathematics.",
-  "Knowledge/Understanding-Linking Ideas": "Graduates will be able to connect mathematical concepts across different branches of mathematics.",
+"Knowledge/Understanding-Linking Ideas": "Graduates will be able to connect mathematical concepts across different branches of mathematics.",  
+"Knowledge/Understanding-Procedure": "Graduates will be able to apply standard mathematical procedures used in calculus, algebra, and computational mathematics.",
   "Skill-Task Completion": "Graduates will be able to perform technical tasks in mathematics such as solving equations, constructing mathematical models, and analyzing datasets using mathematical software.",
   "Skill-Analyze": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
   "Skill-Select/Evaluate": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
@@ -522,17 +521,17 @@ function cleanPlaceholder(part) {
 const cloTemplates = {
   "Knowledge/Understanding-Concept": {
     verbs: ["define", "describe", "explain", "classify", "summarize"],
-    template: ["Students will be able to", "[verb]", "[particular key concepts/theories]", "in", "[mathematical topic in disciplinary or interdisciplinary contexts.]"],
+    template: ["Students will be able to", "[verb]", "[particular key concepts/theories]", "[in disciplinary or interdisciplinary contexts.]"],
     example: "Students will be able to describe the concept of limits and continuity in single-variable calculus."
   },
   "Knowledge/Understanding-Procedure": {
-    verbs: ["break down", "differentiate", "interpret", "infer"],
+    verbs: ["execute", "implement", "solve", "use", "operate"],
     template: ["Students will be able to", "[verb]", "problems involving", "[a particular concept]", "using", "[procedural techniques for solving problems related to the subject and, if possible, interdisciplinary contexts]"],
     example: "Students will be able to solve problems involving derivatives using standard differentiation techniques."
   },
   "Knowledge/Understanding-Linking Ideas": {
     verbs: ["compare", "contrast", "map", "associate", "synthesize"],
-    template: ["Students will be able to", "[verb]", "[two or more specific key ideas in the subject, and, if possible, interdisciplinary contexts]"],
+    template: ["Students will be able to", "[verb]", "[two or more specific key ideas in the subject, and, if possible, interdisciplinary contexts.]"],
     example: "Students will be able to synthesize concepts of rates of change from calculus with their applications in population biology and economics."
   },
   "Skill-Task Completion": {
