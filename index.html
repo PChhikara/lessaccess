@@ -234,12 +234,12 @@ const sentenceStructures = {
     verbs: ["understand", "demonstrate", "develop", "articulate"]
   },
 "Empl-Responsible for self-work": {
-    template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
-    verbs: ["understand", "demonstrate", "develop", "articulate"]
+    template: ["Graduates will be able to", "[verb]", "[their own responsible contributions]", "by completing", "[disciplinary tasks]", "accurately and independently."],
+    verbs: ["take responsibility for", "demonstrate accountability for", "manage"]
   },
 "Ethic-Practice-Constitution/Human/Moral": {
-    template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
-    verbs: ["understand", "demonstrate", "develop", "articulate"]
+    template: ["Graduates will be able to", "[verb]", "[ethical principles and values]", "while", "[applying disciplinary knowledge.]"],
+    verbs: ["practice", "value", "embody"]
   },
 "StudentContri-Asking Questions": {
     template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
@@ -276,8 +276,8 @@ const sentenceStructures = {
   "Gen-Critical/Judge/Responsibility": "Graduates will be able to evaluate the applicability of mathematical arguments by analyzing evidence from mathematical reasoning.",
   "Empl-Job readiness": "Graduates will be able to apply data analysis and quantitative reasoning to meet expectations in industry-based roles.",
   "Empl-Group work": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
-  "Empl-Responsible for self-work": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
-  "Ethic-Practice-Constitution/Human/Moral": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
+  "Empl-Responsible for self-work": "Graduates will be able to take responsibility for the accuracy and clarity of mathematical results and computations.",
+  "Ethic-Practice-Constitution/Human/Moral": "Graduates will be able to embody academic integrity and responsibility while doing mathematical analysis and reporting.",
   "StudentContri-Asking Questions": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
   "StudentContri-Group Tasks": "Graduates will be able to collaborate effectively in team-based problem-solving requiring mathematical thinking.",
   "StudentContri-Risk Taking": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
@@ -512,7 +512,36 @@ function cleanPlaceholder(part) {
        "discipline-specific problems, if relevant, in interdisciplinary contexts.": "discipline-specific problems, if relevant, in interdisciplinary contexts.",
        "two or more specific concepts": "two or more specific concepts",
        "different domains or aspects of the subject or interdisciplinary sources": "different domains or aspects of the subject or interdisciplinary sources",
-       "specific topic(s) in the subject": "specific topic(s) in the subject"
+       "specific topic(s) in the subject": "specific topic(s) in the subject",
+      "specific topics in the subject": "specific topics in the subject",
+      "problems": "problems",
+      "applied contexts.": "applied contexts.",
+      "representations or models to address disciplinary, or interdisciplinary problems": "representations or models to address disciplinary, or interdisciplinary problems",
+      "format(s) such as oral, visual, and/or written": "format(s) such as oral, visual, and/or written",
+      "audiences.": "audiences.",
+      "instructor’s/peers’ comments or course activities.": "instructor’s/peers’ comments or course activities.",
+      "accuracy, efficiency, or relevance": "accuracy, efficiency, or relevance",
+      "using an approach from the subject": "using an approach from the subject",
+      "do a disciplinary task involving specific topic of the subject": "do a disciplinary task involving specific topic of the subject",
+      "data, evidence, or theoretical justifications of the topic.": "data, evidence, or theoretical justifications of the topic.",
+      "discipline-based project or task": "discipline-based project or task",
+      "knowledge/approach": "knowledge/approach",
+      "real/simulated context": "real/simulated context",
+      "the ethical aspects of performing or sharing tasks": "the ethical aspects of performing or sharing tasks",
+      "group activity": "group activity",
+      "purpose": "purpose",
+      "learning goals/tasks": "learning goals/tasks",
+      "ethical/humanistic value": "ethical/humanistic value",
+      "decision/context": "decision/context",
+      "group activity": "group activity",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context",
+      "course objective/context": "course objective/context"
+      
   };
   return map[p] || p;
 }
@@ -556,17 +585,17 @@ const cloTemplates = {
   },
   "Application of Skill": {
     verbs: ["design", "construct", "test", "produce", "revise", "simulate", "model"],
-    template: ["Students will be able to", "[verb]", "[representations or models to address disciplinary, or interdisciplinary problems]", "using techniques from", "[specific topics from the subject.]"],
+    template: ["Students will be able to", "[verb]", "[representations or models to address disciplinary, or interdisciplinary problems]", "using techniques from", "[specific topics in the subject.]"],
     example: "Students will be able to construct graphs of functions using techniques from derivatives to analyze change over time."
   },
   "Gen-Communication-Write/Oral/Read/Listen": {
     verbs: ["write", "present", "discuss", "summarize", "interpret", "listen", "explain", "justify"],
-    template: ["Students will be able to", "[verb]", "disciplinary concepts from", "[specific topics from the subject]", "using", "[format(s) such as oral, visual, and/or written]", "for", "[audiences.]"],
+    template: ["Students will be able to", "[verb]", "disciplinary concepts from", "[specific topics in the subject]", "using", "[format(s) such as oral, visual, and/or written]", "for", "[audiences.]"],
     example: "Students will be able to discuss step-by-step solutions to integral problems using an oral format for both peers and instructors."
   },
   "Gen-OwnLearning": {
     verbs: ["identify", "propose", "investigate", "monitor", "revise", "adjust", "track", "document"],
-    template: ["Students will be able to", "[verb]", "their learning strategies related to ", "[specific topics from the subject]", "based on", "[instructor’s/peers’ comments or course activities.]"],
+    template: ["Students will be able to", "[verb]", "their learning strategies related to ", "[specific topics in the subject]", "based on", "[instructor’s/peers’ comments or course activities.]"],
     example: "Students will be able to revise their learning strategies related to integration techniques and approaches based on course activities and peer discussions."
   },
   "Gen-Critical/Judge/Responsibility": {
@@ -576,7 +605,7 @@ const cloTemplates = {
   },
   "Empl-Job readiness": {
     verbs: ["implement", "deliver", "follow protocols", "document", "report", "maintain"],
-    template: ["Students will be able to", "[verb]", "collaboratively on","[discipline-based project or task]", "related to", "[topic(s) of the subject.]"],
+    template: ["Students will be able to", "[verb]", "collaboratively on","[discipline-based project or task]", "related to", "[specific topics in the subject.]"],
     example: "Students will be able to present collaboratively on a solution strategy for real-life problems based on the rate of change."
   },
   "Empl-Group work": {
@@ -585,14 +614,14 @@ const cloTemplates = {
     example: "Students will be able to implement integration techniques in simulated physics problems."
   },
   "Empl-Responsible for self-work": {
-    verbs: ["identify", "propose", "investigate", "monitor", "revise"],
-    template: ["Students will be able to", "[verb]", "[learning goals/tasks]", "for", "[course objective/context]"],
-    example: "Students will be able to investigate alternative approaches to solve improper integrals."
+    verbs: ["complete", "organize", "reflect", "plan", "fulfill"],
+    template: ["Students will be able to", "[verb]" , "assignments on", "[specific topics in the subject]", "independently and with accountability."],
+    example: "Students will be able to complete their problem sets on limits and continuity independently and with accountability."
   },
   "Ethic-Practice-Constitution/Human/Moral": {
     verbs: ["respond", "justify", "reflect", "act", "advocate"],
-    template: ["Students will be able to", "[verb]", "[ethical/humanistic value]", "in", "[decision/context]"],
-    example: "Students will be able to reflect on ethical considerations in applying calculus to real-life predictions."
+    template: ["Students will be able to", "[verb]", "[the ethical aspects of performing or sharing tasks]", "related to", "[specific topic(s) in the subject.]"],
+    example: "Students will be able to justify the responsible use of proper citation and accuracy in solving real-world calculus problems."
   },
   "StudentContri-Asking Questions": {
     verbs: ["collaborate", "present", "build on others’ ideas"],
