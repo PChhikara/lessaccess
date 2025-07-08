@@ -2193,15 +2193,26 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="3cf64386-6a09-46ba-af17-03a3b1852bca"
-  data-page-id="homepage"
-  data-page-url="https://praveenchhikara.github.io/learning-outcomes-planner/"
-  data-page-title="Learning Outcomes Planner"
-></div>
+<section id="comments" style="margin-top: 40px;">
+  <h2>💬 Comments/Questions</h2>
+  <div class="commentbox"></div>
+</section>
 
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+<script>
+  commentBox('your-project-id'); // Replace with your actual project ID
+</script>
+
+<style>
+  /* Change label to "Name (you may write Anonymous)" */
+  .commentbox label[for="commentbox-nickname"]::before {
+    content: "Name (you may write Anonymous)";
+  }
+  .commentbox label[for="commentbox-nickname"] > span {
+    display: none; /* Hides default "Nickname" text */
+  }
+</style>
+
 
 
 </body>
