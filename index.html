@@ -2193,25 +2193,50 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<section id="comments" style="margin-top: 40px;">
-  <h2>💬 Comments/Questions</h2>
-  <div class="commentbox"></div>
-</section>
+<h2>💬 Comments/Questions</h2>
 
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentBox('your-project-id'); // Replace with your actual project ID
-</script>
+<div id="cusdis_thread"
+     data-host="https://cusdis.com"
+     data-app-id="3cf64386-6a09-46ba-af17-03a3b1852bca"
+     data-page-id="{{ PAGE_ID }}"
+     data-page-url="{{ PAGE_URL }}"
+     data-page-title="{{ PAGE_TITLE }}">
+</div>
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <style>
-  /* Change label to "Name (you may write Anonymous)" */
-  .commentbox label[for="commentbox-nickname"]::before {
+  /* Change "Nickname" label to a friendlier name */
+  #cusdis_thread label[for="nickname"]::before {
     content: "Name (you may write Anonymous)";
   }
-  .commentbox label[for="commentbox-nickname"] > span {
-    display: none; /* Hides default "Nickname" text */
+  #cusdis_thread label[for="nickname"] > span {
+    display: none;
+  }
+
+  /* Hide the Email field */
+  #cusdis_thread label[for="email"],
+  #cusdis_thread input#email {
+    display: none !important;
   }
 </style>
+
+<script>
+  // Automatically fill "Anonymous" if name is left blank
+  document.addEventListener('DOMContentLoaded', function () {
+    const observer = new MutationObserver(() => {
+      const nameInput = document.querySelector('#cusdis_thread input#nickname');
+      if (nameInput && !nameInput.value) {
+        nameInput.value = 'Anonymous';
+      }
+    });
+
+    observer.observe(document.getElementById('cusdis_thread'), {
+      childList: true,
+      subtree: true
+    });
+  });
+</script>
 
 
 
