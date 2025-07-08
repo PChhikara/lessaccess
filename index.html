@@ -2179,18 +2179,39 @@ document.addEventListener("DOMContentLoaded", () => {
 </p>
 <p> National Education Policy (NEP) 2020. Retrieved July 7, 2025, from https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English_0.pdf</p>
 </div>
+<!-- Custom Heading -->
 <section id="comments" style="margin-top: 40px;">
   <h2>💬 Comments, Feedback, and Questions</h2>
+
+  <!-- CommentBox container -->
   <div class="commentbox" data-page-id="home"></div>
 </section>
 
+<!-- CommentBox script -->
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>
-  commentBox('5757561827491840-proj', {
+  commentBox('5717475723313152-proj', {
     className: 'commentbox',
     defaultBoxId: 'home'
   });
 </script>
+
+<!-- OPTIONAL: Customize "Nickname" label -->
+<style>
+  .commentbox label[for="commentbox-nickname"]::before {
+    content: "Name (or write Anonymous)";
+  }
+  .commentbox label[for="commentbox-nickname"] > span {
+    display: none;
+  }
+
+  /* OPTIONAL: Hide email field completely */
+  .commentbox label[for="commentbox-email"],
+  .commentbox input#commentbox-email {
+    display: none !important;
+  }
+</style>
+
 
 
 <h2>💬 Comments/Questions</h2>
