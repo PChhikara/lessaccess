@@ -2213,34 +2213,43 @@ document.addEventListener("DOMContentLoaded", () => {
      data-page-title="{{ PAGE_TITLE }}">
 </div>
 
+<!-- ✅ Custom heading (only once) -->
+<h2 style="display: flex; align-items: center;">
+  <span style="font-size: 1.5em; margin-right: 8px;">💬</span>
+  <span>Comments/Questions</span>
+</h2>
+
+<!-- ✅ Cusdis embed -->
+<div id="cusdis_thread"
+     data-host="https://cusdis.com"
+     data-app-id="3cf64386-6a09-46ba-af17-03a3b1852bca"
+     data-page-id="{{ PAGE_ID }}"
+     data-page-url="{{ PAGE_URL }}"
+     data-page-title="{{ PAGE_TITLE }}"
+     data-theme="light"
+     data-loading="lazy"
+     data-input-placeholder="Reply..."
+     data-css="custom-cusdis-style">
+</div>
+
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
-<style>
-  /* Hide Email Field */
-  #cusdis_thread label[for="email"],
-  #cusdis_thread input#email {
-    display: none !important;
-  }
-</style>
-
+<!-- ✅ Remove extra label, fix "Nickname" text -->
 <script>
-  // Wait until Cusdis fully loads and then update the label and input
   document.addEventListener('DOMContentLoaded', function () {
     const observer = new MutationObserver(() => {
       const nameLabel = document.querySelector('#cusdis_thread label[for="nickname"]');
       const nameInput = document.querySelector('#cusdis_thread input#nickname');
+      const heading = document.querySelector('#cusdis_thread h2');
 
-      if (nameLabel && nameInput) {
-        // Change label text to: Name (you may write Anonymous)
-        nameLabel.textContent = "Name (you may write Anonymous)";
+      // Remove auto-inserted heading
+      if (heading) heading.remove();
 
-        // Auto-fill "Anonymous" if left blank
-        if (!nameInput.value) {
-          nameInput.value = 'Anonymous';
-        }
+      // Change label text
+      if (nameLabel) nameLabel.textContent = 'Name (you may write Anonymous)';
 
-        observer.disconnect(); // Stop observing once applied
-      }
+      // Auto-fill name if empty
+      if (nameInput && !nameInput.value) nameInput.value = 'Anonymous';
     });
 
     observer.observe(document.getElementById('cusdis_thread'), {
@@ -2250,6 +2259,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
+<!-- ✅ Optional: Hide Email Field -->
+<style>
+  #cusdis_thread label[for="email"],
+  #cusdis_thread input#email {
+    display: none !important;
+  }
+</style>
 
 </body>
 </html>
