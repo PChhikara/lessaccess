@@ -2196,23 +2196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
-<!-- OPTIONAL: Customize "Nickname" label -->
-<style>
-  .commentbox label[for="commentbox-nickname"]::before {
-    content: "Name (You may write "Anonymous" if you prefer not to share your name)";
-  }
-  .commentbox label[for="commentbox-nickname"] > span {
-    display: none;
-  }
-
-  /* OPTIONAL: Hide email field completely */
-  .commentbox label[for="commentbox-email"],
-  .commentbox input#commentbox-email {
-    display: none !important;
-  }
-</style>
-
-<!-- Custom Heading -->
+<!-- Heading -->
 <h2>💬 Comments, Feedback, and Questions</h2>
 
 <!-- Cusdis Embed -->
@@ -2228,24 +2212,43 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Load Cusdis -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
-<!-- Custom Language (i18n) Overrides -->
+<!-- Custom Labels -->
 <script>
   window.CUSDIS_LOCALE = {
-    powered_by: '',
-    post_comment: 'Post Comment',
-    loading: 'Loading...',
+    nickname: 'Name (You may leave this blank or write "Anonymous")',
     email: 'Email (optional)',
-    nickname: 'Name (you may write Anonymous)',  // ✅ THIS CHANGES THE LABEL
-    reply_placeholder: 'Reply...',
-    required_error: 'Please fill out required fields',
+    reply_placeholder: 'Write your comment here...',
     submit: 'Submit',
-    submitting: 'Submitting...',
-    submit_success: 'Comment submitted! It will appear once approved.',
-    reply: 'Reply',
-    cancel_reply: 'Cancel',
-    comments: 'Comments',
     no_comments: 'No comments yet.',
+    comments: 'Comments',
+    cancel_reply: 'Cancel',
+    reply: 'Reply',
+    submitting: 'Submitting...',
+    submit_success: 'Comment submitted!',
+    required_error: 'Please fill out required fields',
   };
+</script>
+
+<!-- Auto-fill "Anonymous" if name is blank -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const observer = new MutationObserver(() => {
+      const nameInput = document.querySelector('#cusdis_thread input#nickname');
+      if (nameInput) {
+        nameInput.addEventListener('blur', () => {
+          if (!nameInput.value.trim()) {
+            nameInput.value = 'Anonymous';
+          }
+        });
+        observer.disconnect(); // stop watching once applied
+      }
+    });
+
+    observer.observe(document.getElementById('cusdis_thread'), {
+      childList: true,
+      subtree: true
+    });
+  });
 </script>
 
 <!-- Optional: Hide email field -->
