@@ -88,21 +88,27 @@
   margin: 0.3rem 0;
 }
 </style>
+<script>
+  // Wait until iframe is loaded and adjust its height
+  window.addEventListener('load', function () {
+    const observer = new MutationObserver(() => {
+      const iframe = document.querySelector('iframe.cusdis-iframe');
+      if (iframe) {
+        iframe.style.height = 'auto';
+        iframe.style.minHeight = '400px';
+        iframe.style.overflow = 'visible';
+        iframe.style.border = 'none';
+        observer.disconnect();
+      }
+    });
 
-!-- Add this CSS to fix Cusdis iframe scroll -->
-  <style>
-    iframe.cusdis-iframe {
-      width: 100% !important;
-      height: auto !important;
-      min-height: 300px;
-      border: none !important;
-      overflow: visible !important;
-    }
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  });
+</script>
 
-    #cusdis_thread {
-      overflow: visible !important;
-    }
-  </style>
 </head>
 <body>     
 <div style="text-align: center; margin-top: 1.5rem; margin-bottom: 2rem;">
