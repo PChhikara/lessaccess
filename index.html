@@ -2212,48 +2212,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 </style>
 
-<!-- Custom heading -->
-<h2>💬 Comments/Questions</h2>
+<!-- Custom Heading -->
+<h2>💬 Comments, Feedback, and Questions</h2>
 
-<!-- Cusdis embed -->
+<!-- Cusdis Embed -->
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="3cf64386-6a09-46ba-af17-03a3b1852bca"
   data-page-id="{{ PAGE_ID }}"
   data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}">
+  data-page-title="{{ PAGE_TITLE }}"
+  data-lang="custom">
 </div>
 
 <!-- Load Cusdis -->
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
-<!-- Customize "Nickname" label, autofill, and hide email -->
+<!-- Custom Language (i18n) Overrides -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const observer = new MutationObserver(() => {
-      const nameLabel = document.querySelector('#cusdis_thread label[for="nickname"]');
-      const nameInput = document.querySelector('#cusdis_thread input#nickname');
-
-      if (nameLabel && nameInput) {
-        // Change label to allow anonymous
-        nameLabel.textContent = "Name (you may write Anonymous)";
-
-        // Auto-fill "Anonymous" if left blank on blur
-        nameInput.addEventListener('blur', () => {
-          if (!nameInput.value.trim()) {
-            nameInput.value = "Anonymous";
-          }
-        });
-
-        observer.disconnect(); // done
-      }
-    });
-
-    observer.observe(document.getElementById('cusdis_thread'), {
-      childList: true,
-      subtree: true
-    });
-  });
+  window.CUSDIS_LOCALE = {
+    powered_by: '',
+    post_comment: 'Post Comment',
+    loading: 'Loading...',
+    email: 'Email (optional)',
+    nickname: 'Name (you may write Anonymous)',  // ✅ THIS CHANGES THE LABEL
+    reply_placeholder: 'Reply...',
+    required_error: 'Please fill out required fields',
+    submit: 'Submit',
+    submitting: 'Submitting...',
+    submit_success: 'Comment submitted! It will appear once approved.',
+    reply: 'Reply',
+    cancel_reply: 'Cancel',
+    comments: 'Comments',
+    no_comments: 'No comments yet.',
+  };
 </script>
 
 <!-- Optional: Hide email field -->
@@ -2263,7 +2255,6 @@ document.addEventListener("DOMContentLoaded", () => {
     display: none !important;
   }
 </style>
-
 
 </body>
 </html>
