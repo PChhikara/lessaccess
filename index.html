@@ -1150,7 +1150,10 @@ output.appendChild(sentenceLine);
           });
           if (values.includes("")) return alert("Please complete all parts of the CLO.");
           const cloSentence = values.join(" ");
-      const existingSentences = Array.from(ul.children).map(li => li.textContent.replace("Edit", "").trim());
+      const existingSentences = Array.from(ul.children).map(li =>
+  li.textContent.trim().replace("Edit", "").replace("Delete", "").trim()
+);
+
       if (existingSentences.includes(cloSentence.trim())) return;
           const idSafe = subga.replace(/\W+/g, "_");
 
@@ -1159,7 +1162,10 @@ output.appendChild(sentenceLine);
             block = document.createElement("div");
             block.id = "block_" + idSafe;
             
-  const existingSentences = Array.from(ul.children).map(li => li.textContent.trim().replace("Edit", "").trim());
+  const existingSentences = Array.from(ul.children).map(li =>
+  li.textContent.trim().replace("Edit", "").replace("Delete", "").trim()
+);
+
   if (existingSentences.includes(cloSentence.trim())) {
     return; // skip adding duplicate CLO
   }
