@@ -2229,36 +2229,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 </script>
 
-<!-- Auto-fill "Anonymous" if name is blank -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const observer = new MutationObserver(() => {
-      const nameInput = document.querySelector('#cusdis_thread input#nickname');
-      if (nameInput) {
-        nameInput.addEventListener('blur', () => {
-          if (!nameInput.value.trim()) {
-            nameInput.value = 'Anonymous';
-          }
-        });
-        observer.disconnect(); // stop watching once applied
-      }
-    });
-
-    observer.observe(document.getElementById('cusdis_thread'), {
-      childList: true,
-      subtree: true
-    });
-  });
-</script>
-
-<!-- Optional: Hide email field -->
-<style>
-  #cusdis_thread label[for="email"],
-  #cusdis_thread input#email {
-    display: none !important;
-  }
-</style>
-
 <!-- Auto-fill "Anonymous" if name is left blank -->
 <script>
   window.addEventListener('message', function (event) {
@@ -2266,7 +2236,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const iframe = document.querySelector('iframe.cusdis-iframe');
       if (!iframe) return;
 
-      // Send custom script to run inside the iframe
       iframe.contentWindow.postMessage({
         type: 'cusdis-custom-script',
         payload: `
@@ -2284,6 +2253,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 </script>
+
+<!-- Optional: Hide email field -->
+<style>
+  #cusdis_thread label[for="email"],
+  #cusdis_thread input#email {
+    display: none !important;
+  }
+</style>
 
 
 
