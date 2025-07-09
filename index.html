@@ -88,27 +88,6 @@
   margin: 0.3rem 0;
 }
 </style>
-<script>
-  // Wait until iframe is loaded and adjust its height
-  window.addEventListener('load', function () {
-    const observer = new MutationObserver(() => {
-      const iframe = document.querySelector('iframe.cusdis-iframe');
-      if (iframe) {
-        iframe.style.height = 'auto';
-        iframe.style.minHeight = '400px';
-        iframe.style.overflow = 'visible';
-        iframe.style.border = 'none';
-        observer.disconnect();
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  });
-</script>
-
 </head>
 <body>     
 <div style="text-align: center; margin-top: 1.5rem; margin-bottom: 2rem;">
@@ -2226,7 +2205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   data-app-id="3cf64386-6a09-46ba-af17-03a3b1852bca"
   data-page-id="{{ PAGE_ID }}"
   data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
+  data-page-title="{{ Learning Outcomes Planner }}"
   data-lang="custom">
 </div>
 
@@ -2280,6 +2259,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 </style>
 
+<!-- Auto-fill "Anonymous" if name is left blank -->
+<script>
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.type === 'cusdis-loaded') {
+      const iframe = document.querySelector('iframe.cusdis-iframe');
+      if (!iframe) return;
+
+      // Send custom script to run inside the iframe
+      iframe.contentWindow.postMessage({
+        type: 'cusdis-custom-script',
+        payload: `
+          const nicknameInput = document.querySelector('input#nickname');
+          const form = document.querySelector('form');
+          if (form && nicknameInput) {
+            form.addEventListener('submit', () => {
+              if (!nicknameInput.value.trim()) {
+                nicknameInput.value = 'Anonymous';
+              }
+            });
+          }
+        `
+      }, '*');
+    }
+  });
+</script>
 
 
 
