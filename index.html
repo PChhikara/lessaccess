@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -176,8 +176,8 @@ const gaOptions = {
   "General, Tech, and Prof. Skills": ["Gen-Communication-Write/Oral/Read/Listen", "Gen-OwnLearning", "Gen-Critical/Judge/Responsibility"],
 "Constitutional, Humanistic, Ethical Values": ["Ethic-Practice-Constitution/Human/Moral"],
     "Employability and Entrepreneurship": ["Empl-Job readiness", "Empl-Group work", "Empl-Responsible for self-work"],
-    "Student Contribution": ["Student Contribution – Pose Meaningful Questions", "Student Contribution – Show learning from peers", "Student Contribution – Show Listening Ability and Empathy", "Student Contribution – Show contribution of relevant knowledge/skills in peer’s knowledge"],
-    "Subject Evolution": ["SubjectEvol-Over Time", "SubjectEvol-Human"]
+    "Student Contribution": ["Student Contribution – Pose Meaningful Questions", "Student Contribution – Show learning from peers", "Student Contribution – Show Listening Ability and Empathy", "Student Contribution – Show Contribution to Peer Learning", "Student Contribution – Taking Conceptual Risks"],
+    "Subject Evolution": ["Subject Evolution – Over Time", "Subject Evolution – Human Contribution"]
 };
 
 const confirmedGAs = [];
@@ -256,6 +256,25 @@ const sentenceStructures = {
     template: ["Graduates will be able to", "[verb]", "diverse approaches to support", "[disciplinary learning]", "with thoughtful response in group contexts."],
     verbs: ["emphasize", "respect", "engage in"] 
   },
+"Student Contribution – Show Contribution to Peer Learning": {
+    template: ["Graduates will be able to", "[verb]", "peer learning by offering meaningful disciplinary input that supports shared understanding in collaborative settings."],
+    verbs: ["contribute", "support", "co-construct"] 
+  },
+"Student Contribution – Taking Conceptual Risks": {
+    template: ["Graduates will be able to", "[verb]", "peer learning by offering meaningful disciplinary input that supports shared understanding in collaborative settings."],
+    verbs: ["contribute", "support", "co-construct"] 
+  },
+
+
+"Student Contribution – NEXT": {
+    template: ["Graduates will be able to", "[verb]", "diverse approaches to support", "[disciplinary learning]", "with thoughtful response in group contexts."],
+    verbs: ["emphasize", "respect", "engage in"] 
+  },
+,
+"Student Contribution – NEXT": {
+    template: ["Graduates will be able to", "[verb]", "diverse approaches to support", "[disciplinary learning]", "with thoughtful response in group contexts."],
+    verbs: ["emphasize", "respect", "engage in"] 
+  },
  "SubjectEvol-Over Time": {
     template: ["Graduates will be able to", "[verb]", "key", "[concepts/theories/principles]", "in", "[disciplinary or multidisciplinary contexts]"],
     verbs: ["understand", "demonstrate", "develop", "articulate"]
@@ -284,7 +303,9 @@ const sentenceStructures = {
   "Student Contribution – Pose Meaningful Questions": "Graduates will be able to inquire meaningful and challenging questions that deepen understanding and promote further inquiry of pure and applied mathematics.",
   "Student Contribution – Show learning from peers": "Graduates will be able to build on knowledge and understanding of mathematics by building on peers’ ideas and contributions in collaborative settings.",
   "Student Contribution – Show Listening Ability and Empathy": "Graduates will be able to engage in diverse approaches to support mathematical learning with thoughtful response in group contexts.",
-  "SubjectEvol-Over Time": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
+"Student Contribution – Show Contribution to Peer Learning": "Graduates will be able to co-construct peer learning by offering meaningful disciplinary input that supports shared understanding in collaborative settings.",
+ "Student Contribution – Taking Conceptual Risks": "Graduates will be able to co-construct peer learning by offering meaningful disciplinary input that supports shared understanding in collaborative settings.",
+"SubjectEvol-Over Time": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
   "SubjectEvol-Human": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics."
   };
 
@@ -636,6 +657,16 @@ const cloTemplates = {
     verbs: ["listen actively", "acknowledge", "paraphrase", "affirm", "reflect back"], 
     template: ["Students will be able to", "[verb]", "peer contributions related to", "[topic]", "to support thoughtful disciplinary discussion through collaborative projects."],
     example: "Students will be able to acknowledge peer contributions related to interpretations of critical points of functions to support thoughtful disciplinary discussion through collaborative projects."
+  },
+  "Student Contribution – Show Contribution to Peer Learning": {
+    verbs: ["listen actively", "acknowledge", "paraphrase", "affirm", "reflect back"], 
+    template: ["Students will be able to", "[verb]", "peer contributions related to", "[topic]", "to extend", "[disciplinary understanding]", "during collaborative problem-solving or discussion."],
+     example: "Students will be able to extend peer ideas related to the chain rule to extend mathematical understanding during collaborative problem-solving."
+  },
+"Student Contribution – Taking Conceptual Risks": {
+    verbs: ["listen actively", "acknowledge", "paraphrase", "affirm", "reflect back"], 
+    template: ["Students will be able to", "[verb]", "peer contributions related to", "[topic]", "to extend", "[disciplinary understanding]", "during collaborative problem-solving or discussion."],
+     example: "Students will be able to extend peer ideas related to the chain rule to extend mathematical understanding during collaborative problem-solving."
   },
   "SubjectEvol-Over Time": {
     verbs: ["collaborate", "present", "build on others’ ideas"],
@@ -995,6 +1026,8 @@ const step2SubGAOptions = [
   "Student Contribution – Pose Meaningful Questions",
   "Student Contribution – Show learning from peers",
   "Student Contribution – Show Listening Ability and Empathy",
+"Student Contribution – Show Contribution to Peer Learning",
+ "Student Contribution – Taking Conceptual Risks",
   "SubjectEvol-Over Time",
   "SubjectEvol-Human"    
 ];
