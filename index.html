@@ -896,7 +896,7 @@ function updateStep2Dropdown() {
   gaSelectDropdown.innerHTML = '<option value="">-- Select a GA --</option>';
 
   gaLines.forEach((line) => {
-    let text = line.textContent.replace("Edit", "").trim();
+    let text = line.textContent.replace("Edit", "").replace("Delete", "").trim();
     let cleanValue = text.replace(/^\d+\.\s*/, "");  // remove leading "1. "
     const option = document.createElement("option");
     option.value = cleanValue;
