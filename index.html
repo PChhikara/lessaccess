@@ -173,7 +173,7 @@ const gaOptions = {
     "Knowledge and Understanding": ["Knowledge/Understanding-Concept", "Knowledge/Understanding-Procedure", "Knowledge/Understanding-Linking Ideas"],
   "Generic Learning Outcomes": ["Skill-Task Completion", "Skill-Analyze", "Skill-Select/Evaluate"],
   "Application of Knowledge and Skills": ["Application of Knowledge", "Application of Skill"],
-  "General, Tech, and Prof. Skills": ["Gen-Communication-Write/Oral/Read/Listen", "Gen-OwnLearning", "Gen-Critical/Judge/Responsibility"],
+  "General, Tech, and Prof. Skills": ["Gen-Communication-Write/Oral/Read", "Gen-Communication-Listen", "Gen-OwnLearning", "Gen-Critical/Judge/Responsibility"],
 "Constitutional, Humanistic, Ethical Values": ["Ethic-Practice-Constitution/Human/Moral"],
     "Employability and Entrepreneurship": ["Empl-Job readiness", "Empl-Group work", "Empl-Responsible for self-work"],
     "Student Contribution": ["Student Contribution – Pose Meaningful Questions", "Student Contribution – Show learning from peers", "Student Contribution – Show Listening Ability and Empathy", "Student Contribution – Show Contribution to Peer Learning", "Student Contribution – Taking Conceptual Risks"],
@@ -216,10 +216,15 @@ const sentenceStructures = {
     verbs: ["generate", "perform", "develop", "construct", "execute"],
     model: ["models", "solutions", "products"]
   },
-"Gen-Communication-Write/Oral/Read/Listen": {
+"Gen-Communication-Write/Oral/Read": {
     template: ["Graduates will be able to", "[verb]", "[disciplinary ideas]", "clearly and effectively through", "[oral, written, and/or visual formats]", "for", "[expert and/or general audiences.]"],
     verbs: ["communicate", "express", "convey", "articulate", "present"]
   },
+ "Gen-Communication-Listen": {
+    template: ["Graduates will be able to", "[verb]", "[disciplinary ideas]", "clearly and effectively through", "[oral, written, and/or visual formats]", "for", "[expert and/or general audiences.]"],
+    verbs: ["listen to"]
+  },
+
 "Gen-OwnLearning": {
     template: ["Graduates will be able to", "[verb]", "their own", "[learning process and progress]", "to support academic development in", "[disciplinary or interdisciplinary contexts]"],
     verbs: ["manage", "reflect", "monitor", "plan", "evaluate"]
@@ -282,8 +287,9 @@ const sentenceStructures = {
   "Skill-Select/Evaluate": "Graduates will be able to evaluate tools and methods in mathematics to determine effective approaches for solving problems in science and engineering.",
   "Application of Knowledge": "Graduates will be able to apply mathematical knowledge to solve problems in physics, economics, and life sciences.",
   "Application of Skill": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
-  "Gen-Communication-Write/Oral/Read/Listen": "Graduates will be able to communicate mathematical reasoning and conclusions clearly and effectively in oral and written formats for expert and general audiences.",
-  "Gen-OwnLearning": "Graduates will be able to reflect on their own learning strategies and progress to support continued academic development in mathematics.",
+  "Gen-Communication-Write/Oral/Read": "Graduates will be able to communicate mathematical reasoning and conclusions clearly and effectively in oral and written formats for expert and general audiences.",
+  "Gen-Communication-Listen": "Graduates will be able to communicate mathematical reasoning and conclusions clearly and effectively in oral and written formats for expert and general audiences.",
+   "Gen-OwnLearning": "Graduates will be able to reflect on their own learning strategies and progress to support continued academic development in mathematics.",
   "Gen-Critical/Judge/Responsibility": "Graduates will be able to evaluate the applicability of mathematical arguments by analyzing evidence from mathematical reasoning.",
   "Empl-Job readiness": "Graduates will be able to apply data analysis and quantitative reasoning to meet expectations in industry-based roles.",
   "Empl-Group work": "Graduates will be able to understand key mathematical concepts and theorems in pure and applied mathematics.",
@@ -562,7 +568,7 @@ const cloTemplates = {
     example: "Students will be able to describe the concept of limits and continuity in single-variable calculus."
   },
   "Knowledge/Understanding-Procedure": {
-    verbs: ["execute", "implement", "solve", "use", "operate"],
+    verbs: ["solve", "apply", "use"],
     template: ["Students will be able to", "[verb]", "problems involving", "[a particular concept]", "using", "[procedural techniques for solving problems related to the subject and, if possible, interdisciplinary contexts]"],
     example: "Students will be able to solve problems involving derivatives using standard differentiation techniques."
   },
@@ -572,7 +578,7 @@ const cloTemplates = {
     example: "Students will be able to synthesize concepts of rates of change from calculus with their applications in population biology and economics."
   },
   "Skill-Task Completion": {
-    verbs: ["use", "calculate", "build", "simulate", "follow"],
+    verbs: ["use", "calculate", "build", "simulate"],
     template: ["Students will be able to", "[verb]", "key procedural tasks related to", "[topic and, if relevant in interdisciplinary contextual problems.]"],
     example: "Students will be able to calculate derivatives of trigonometric functions."
   },
@@ -596,10 +602,15 @@ const cloTemplates = {
     template: ["Students will be able to", "[verb]", "[representations or models to address disciplinary, or interdisciplinary problems]", "using techniques from", "[specific topics in the subject.]"],
     example: "Students will be able to construct graphs of functions using techniques from derivatives to analyze change over time."
   },
-  "Gen-Communication-Write/Oral/Read/Listen": {
-    verbs: ["write", "present", "discuss", "summarize", "interpret", "listen", "explain", "justify"],
+  "Gen-Communication-Write/Oral/Read": {
+    verbs: ["write", "present", "discuss", "summarize", "interpret", "explain", "justify"],
     template: ["Students will be able to", "[verb]", "disciplinary concepts from", "[specific topics in the subject]", "using", "[format(s) such as oral, visual, and/or written]", "for", "[audiences.]"],
     example: "Students will be able to discuss step-by-step solutions to integral problems using an oral format for both peers and instructors."
+  },
+  "Gen-Communication-Listen": {
+    verbs: ["listen to"],
+    template: ["Students will be able to", "[verb]", "disciplinary concepts", "presented by", "[audiences]", "on" "[specific topics in the subject]", "using" "[format(s) such as oral, visual, and/or written.]"], 
+   example: "Students will be able to listen to disciplinary content presented by peers on calculus concepts using oral presentations."
   },
   "Gen-OwnLearning": {
     verbs: ["identify", "propose", "investigate", "monitor", "revise", "adjust", "track", "document"],
@@ -1005,7 +1016,8 @@ const step2SubGAOptions = [
   "Skill-Select/Evaluate",
   "Application of Knowledge",
   "Application of Skill",
-  "Gen-Communication-Write/Oral/Read/Listen",
+  "Gen-Communication-Write/Oral/Read",
+ "Gen-Communication-Listen",
   "Gen-OwnLearning",
  "Gen-Critical/Judge/Responsibility",
   "Empl-Job readiness",
