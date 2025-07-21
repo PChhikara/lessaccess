@@ -183,11 +183,11 @@ const gaOptions = {
 const confirmedGAs = [];
 const sentenceStructures = {
   "Knowledge/Understanding-Concept": {
-    template: ["Graduates will be able to", "[verb]", "[core facts/concepts/principles/theories/processes]", "of", "[chosen fields of discipline, if applicable, in its interdisciplinary contexts]"],
+    template: ["Graduates will be able to", "[verb]", "[core facts/concepts/principles/theories/processes]", "of", "[discipline(s), incl. interdisciplinary contexts.]"],
     verbs: ["demonstrate","understand", "grasp"]
   },
     "Knowledge/Understanding-Linking Ideas": {
-    template: ["Graduates will be able to", "[verb]", "[concepts/theories/principles within discipline and, if relevant, across interdisciplinary domains.]"],
+    template: ["Graduates will be able to", "[verb]", "[discipline(s), incl. interdisciplinary contexts.]"],
     verbs: ["connect", "relate", "integrate"]
   },
  "Knowledge/Understanding-Procedure": {
@@ -195,7 +195,7 @@ const sentenceStructures = {
     verbs: ["apply", "perform", "demonstrate"]
   }, 
 "Skill-Task Completion": {
-    template: ["Graduates will be able to", "[verb]", "[technical and cognitive tasks relevant to discipline and, if applicable, interdisciplinary contexts]", "such as", "[examples here.]"],
+    template: ["Graduates will be able to", "[verb]", "[technical and cognitive tasks relevant to discipline(s) (incl. interdisciplinary)]", "such as", "[examples here.]"],
     verbs: ["perform", "carry out", "operate"]
   },
   
@@ -387,7 +387,7 @@ function updateSentenceStructure() {
         const input = document.createElement("input");
         input.type = "text";
       input.placeholder = "" + part.slice(1, -1);
-      input.style.width = "320px";
+      input.style.width = "400px";
         container.appendChild(input);
       } else {
         const span = document.createElement("span");
