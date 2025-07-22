@@ -1612,11 +1612,34 @@ summaryBtn.onclick = () => {
   }
 };
 
-btnRow.appendChild(saveCLOOnlyBtn);
-btnRow.appendChild(saveBtn);
-btnRow.appendChild(moveBtn);
-btnRow.appendChild(summaryBtn);
-output.appendChild(btnRow);
+// Create a container to hold both rows
+const btnContainer = document.createElement("div");
+
+// Row 1: Centered "Save CLO" button
+const saveRow = document.createElement("div");
+saveRow.style.marginBottom = "0.75rem";
+saveRow.style.display = "flex";
+saveRow.style.justifyContent = "center";  // centers the button
+saveRow.appendChild(saveCLOOnlyBtn);
+
+// Row 2: The other 3 buttons in a row
+const actionRow = document.createElement("div");
+actionRow.style.display = "flex";
+actionRow.style.flexWrap = "wrap";
+actionRow.style.gap = "0.75rem";
+actionRow.style.justifyContent = "flex-start"; // change to "center" if you'd like
+
+actionRow.appendChild(saveBtn);
+actionRow.appendChild(moveBtn);
+actionRow.appendChild(summaryBtn);
+
+// Add both rows to the container
+btnContainer.appendChild(saveRow);
+btnContainer.appendChild(actionRow);
+
+// Add everything to output
+output.appendChild(btnContainer);
+
 
     });
   });
