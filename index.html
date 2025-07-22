@@ -1612,32 +1612,11 @@ summaryBtn.onclick = () => {
   }
 };
 
-// Create a wrapper for both rows
-const btnContainer = document.createElement("div");
-
-// First row: Save button
-const saveRow = document.createElement("div");
-saveRow.style.marginBottom = "0.75rem";  // add some spacing
-saveRow.appendChild(saveCLOOnlyBtn);
-
-// Second row: Other three buttons in same line
-const actionRow = document.createElement("div");
-actionRow.style.display = "flex";
-actionRow.style.gap = "0.75rem";
-actionRow.style.flexWrap = "wrap";
-actionRow.style.justifyContent = "flex-start";
-
-actionRow.appendChild(saveBtn);
-actionRow.appendChild(moveBtn);
-actionRow.appendChild(summaryBtn);
-
-// Combine both rows
-btnContainer.appendChild(saveRow);
-btnContainer.appendChild(actionRow);
-
-// Replace output
-output.appendChild(btnContainer);
-
+btnRow.appendChild(saveCLOOnlyBtn);
+btnRow.appendChild(saveBtn);
+btnRow.appendChild(moveBtn);
+btnRow.appendChild(summaryBtn);
+output.appendChild(btnRow);
 
     });
   });
