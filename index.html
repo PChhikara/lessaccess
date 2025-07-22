@@ -1291,7 +1291,7 @@ block.insertAdjacentHTML("beforeend", `
   if (!instruction) {
     instruction = document.createElement("div");
     instruction.id = "nextStepInstruction";
-   instruction.innerHTML = "👉 <strong>Click one of the three buttons below to continue.</strong>";
+   instruction.innerHTML = "👉 <strong>Click one of the three highlighted buttons below to continue.</strong>";
 instruction.style.position = "fixed";
 instruction.style.top = "20%";
 instruction.style.left = "50%";
@@ -1585,19 +1585,21 @@ block.insertAdjacentHTML("beforeend", `
   if (!instruction) {
     instruction = document.createElement("div");
     instruction.id = "nextStepInstruction";
-    instruction.textContent = "Click an appropriate button out of these three.";
-    instruction.style.position = "fixed";
-    instruction.style.top = "20%";
-    instruction.style.left = "50%";
-    instruction.style.transform = "translateX(-50%)";
-    instruction.style.background = "#fff3cd";
-    instruction.style.color = "#856404";
-    instruction.style.padding = "1rem 1.5rem";
-    instruction.style.border = "2px solid #ffeeba";
-    instruction.style.borderRadius = "8px";
-    instruction.style.boxShadow = "0px 0px 10px rgba(0,0,0,0.2)";
-    instruction.style.zIndex = 10000;
-    instruction.style.fontWeight = "bold";
+   instruction.innerHTML = "👉 <strong>Click one of the three highlighted buttons below to continue.</strong>";
+instruction.style.position = "fixed";
+instruction.style.top = "20%";
+instruction.style.left = "50%";
+instruction.style.transform = "translateX(-50%)";
+instruction.style.background = "#003049";               // deep blue
+instruction.style.color = "#ffffff";                    // white text
+instruction.style.padding = "1.2rem 1.8rem";
+instruction.style.border = "2px solid #66d9ef";         // light blue border
+instruction.style.borderRadius = "10px";
+instruction.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
+instruction.style.zIndex = 10000;
+instruction.style.fontWeight = "bold";
+instruction.style.fontSize = "1.1rem";
+instruction.style.textAlign = "center";
     document.body.appendChild(instruction);
 
     setTimeout(() => {
