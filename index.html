@@ -1547,8 +1547,8 @@ block.insertAdjacentHTML("beforeend", `
   // Circle-style highlight using outline animation
   const buttonsToHighlight = [
     "Add more CLOs for current GA",
-    "No more CLOs for this GA & Add another GA from Step 1",
-    "CLOs for all GAs added"
+    "Proceed to Next GA",
+    "Finish – Proceed to Summary"
   ];
 
   buttonsToHighlight.forEach(label => {
@@ -1595,13 +1595,13 @@ block.insertAdjacentHTML("beforeend", `
 // Save this CLO & Add more CLOs for current GA
 saveBtn.style.backgroundColor = "#007bff";
 
-// No more CLOs for this GA & Add another GA from Step 1
-moveBtn.textContent = "No more CLOs for this GA & Add another GA from Step 1";
+// Proceed to Next GA
+moveBtn.textContent = "Proceed to Next GA";
 moveBtn.style.backgroundColor = "#fd7e14";
 
-// CLOs for all GAs added
+//  Finish – Proceed to Summary
 const summaryBtn = document.createElement("button");
-summaryBtn.textContent = "CLOs for all GAs added";
+summaryBtn.textContent = "Finish – Proceed to Summary";
 summaryBtn.style.backgroundColor = "#20c997";
 summaryBtn.onclick = () => {
   const target = document.getElementById("showCLOSummaryButton");
