@@ -142,7 +142,7 @@
 </select>
 <p id="exampleDisplay" style="font-style: italic; color: #6c757d;"></p><div id="sentenceStructure" style="margin-top: 1rem;"></div>
 <div id="gaButtons" style="display:none">
-<button onclick="if (isGAInputValid()) saveGA()">Save the above GA &amp; Add another</button>
+<button onclick="if (isGAInputValid()) saveGA()">Save the above GA - Add another</button>
 <button onclick="if (isGAInputValid()) finalizeGA()">Save &amp Finish GA List – Proceed to CLOs</button>
 </div>
 <div class="confirmed-list" style="background-color: #e9f7ef; border-left: 6px solid #2ecc71; padding: 1rem; border-radius: 6px;">
@@ -173,7 +173,7 @@ const gaOptions = {
     "Knowledge and Understanding": ["Knowledge/Understanding-Concept", "Knowledge/Understanding-Procedure", "Knowledge/Understanding-Linking Ideas"],
   "Generic Learning Outcomes": ["Skill-Task Completion", "Skill-Analyze", "Skill-Select/Evaluate"],
   "Application of Knowledge and Skills": ["Application of Knowledge", "Application of Skill"],
-  "General, Tech, and Prof. Skills": ["Gen-Communication-Write/Oral/Read", "Gen-Communication-Listen", "Gen-OwnLearning", "Gen-Critical/Judge/Responsibility"],
+  "General, Tech, and Professional Skills": ["Gen-Communication-Write/Oral/Read", "Gen-Communication-Listen", "Gen-OwnLearning", "Gen-Critical/Judge/Responsibility"],
 "Constitutional, Humanistic, Ethical Values": ["Ethic-Practice-Constitution/Human/Moral"],
     "Employability and Entrepreneurship": ["Empl-Job readiness", "Empl-Group work", "Empl-Responsible for self-work"],
     "Student Contribution": ["Student Contribution – Pose Meaningful Questions", "Student Contribution – Show learning from peers", "Student Contribution – Show Listening Ability and Empathy", "Student Contribution – Show Contribution to Peer Learning", "Student Contribution – Taking Conceptual Risks"],
@@ -327,7 +327,7 @@ function populateBroadGAs(category = "") {
   let allowedKeys = [];
 
   if (category === "1") {
-    allowedKeys = ["Knowledge and Understanding", "Generic Learning Outcomes", "Application of Knowledge and Skills", "General, Tech, and Prof. Skills", "Constitutional, Humanistic, Ethical Values", "Employability and Entrepreneurship"];
+    allowedKeys = ["Knowledge and Understanding", "Generic Learning Outcomes", "Application of Knowledge and Skills", "General, Tech, and Professional Skills", "Constitutional, Humanistic, Ethical Values", "Employability and Entrepreneurship"];
   } else if (category === "2") {
     allowedKeys = ["Student Contribution", "Subject Evolution"];
   } 
@@ -2220,7 +2220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div style="max-width: 800px; margin: 1.5rem auto; padding: 1rem 1.5rem; background-color: ##d4edda; border-left: 6px solid #28a745; border-radius: 8px; font-size: 0.95rem; color: #4a4a4a; line-height: 1.5;">
 <p><strong>Sources:</strong>.</p>
-<p> National Higher Education Qualifications Framework (NHEQF). (n.d.). Retrieved July 4, 2025, from https://www.hpuniv.ac.in/upload/downloads/67727e1d692daNHEQF-merged-compressed.pdf
+<p> National Higher Education Qualifications Framework (NHEQF) 2022. (n.d.). Retrieved July 4, 2025, from https://www.hpuniv.ac.in/upload/downloads/67727e1d692daNHEQF-merged-compressed.pdf
 </p>
 <p> National Education Policy (NEP) 2020. Retrieved July 7, 2025, from https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English_0.pdf</p>
 </div>
