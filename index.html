@@ -1452,7 +1452,7 @@ btnRow.style.justifyContent = "space-between";
 // Save this CLO
 
 const saveCLOOnlyBtn = document.createElement("button");
-saveCLOOnlyBtn.textContent = "First Click Here to Save the above CLO";
+saveCLOOnlyBtn.innerHTML = "<strong>First Click Here</strong> to Save the above CLO";
 saveCLOOnlyBtn.style.backgroundColor = "#6f42c1";
 saveCLOOnlyBtn.onclick = () => {
   // Silent saving without highlight or scroll
